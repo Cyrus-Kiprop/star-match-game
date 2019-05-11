@@ -5,7 +5,6 @@
   "scripts": {
     "eslint": "eslint \"src/**/*.js\"",
     "start": "concurrently \"npm run dev-server\" \"npm run dev-bundle\"",
-    "heroku-postbuild":"webpack -wd",
     "test": "jest",
     "dev-server": "cross-env NODE_PATH=./src nodemon --exec \"babel-node src/server/server.js\" --ignore .reactful.json --ignore public/",
     "dev-bundle": "webpack -wd",
