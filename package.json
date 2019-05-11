@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "eslint": "eslint \"src/**/*.js\"",
-    "start": "concurrently \"npm run dev-server\" \"npm run dev-bundle\"",
+    "start": "npm run dev-server",
     "test": "jest",
+    "heroku-postbuild":"webpack -wd" ,
     "dev-server": "cross-env NODE_PATH=./src nodemon --exec \"babel-node src/server/server.js\" --ignore .reactful.json --ignore public/",
-    "dev-bundle": "webpack -wd",
     "verify-tests": "jest --coverage",
     "build-react": "cross-env NODE_ENV=production webpack --progress -p",
     "build-node": "babel src -d build --config-file ./babel-node.config.js --copy-files",
